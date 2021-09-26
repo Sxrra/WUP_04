@@ -35,6 +35,15 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+```{r}
+mydata<- read.csv(file= "GSScsv.csv")
+```
+```{r}
+boxplot(WORDSUM~DEGREE,data=mydata)
+```
+
+
+The middle box and the box at the end to the right are able to go under the box on its left labeled as "graduate." The means from the two sets are different from one another. If you were to run any tests with those two boxes, it would appear that its mean values for WORDSUM test are a lower value than the boxes "Bachelor", "Graduate", and "Junior College."
 
 ### Numerical Descriptive Results
 
