@@ -59,7 +59,22 @@ The individuals with a junior college degree, a bachelors degree, and a graduate
 ## Inferential Results
 
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
+```{r}
+  model1 <- aov(WORDSUM~DEGREE,data=mydata)
+summary.aov(model1)
+```
 
+
+The P value is small. It represents the chances of getting the overall result and debating on whether the hypothesis would be true or not or whether or not I would have to reject it or not.
+
+
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 8.7, 2, 2))
+plot(TukeyHSD(model1,conf.level=.95),las=2)
+```
+
+This plot shows the differences between high school and graduates as well as LT High School. It shows that LT High School-graduate and High School-graduate does not hit the "0" line.
 
 # Discussion and Conclusion
 
